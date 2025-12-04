@@ -15,6 +15,8 @@ def log_likelihood_from_probs(y, p):
     return np.sum(y * np.log(p) + (1 - y) * np.log(1 - p))
 
 def nagelkerke_coxsnell(y_true, y_pred_prob):
+    # implementation based on the R package rcompanion v2.5.0 
+    # Mangiafico, S. S. (2025). rcompanion: Functions to support extension education program evaluation [Manual]. Rutgers Cooperative Extension. https://CRAN.R-project.org/package=rcompanion
     y = np.asarray(y_true)
     p = np.asarray(y_pred_prob)
     n = len(y)
