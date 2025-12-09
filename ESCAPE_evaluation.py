@@ -171,7 +171,7 @@ def bootstrap_ci(y_true, y_pred, metric_func, n_bootstrap=1000, ci=95):
     lower = np.percentile(bootstrap_scores, alpha)
     upper = np.percentile(bootstrap_scores, 100 - alpha)
     
-    return upper, lower
+    return lower, upper
 
 def calculate_discrimination_slope(y_true, score_values):
     mean_pos = score_values[y_true == 1].mean()
