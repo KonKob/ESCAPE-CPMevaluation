@@ -25,7 +25,7 @@ def nagelkerke_coxsnell(y_true, y_pred_prob):
     p0 = np.mean(y)
     ll_null = log_likelihood_from_probs(y, np.full(n, p0))
     
-    r2_cs = 1.0 - np.exp((2.0 / n) * (ll_model - ll_null))
+    r2_cs = 1.0 - np.exp((2.0 / n) * (ll_null - ll_model))
     
     denom = 1.0 - np.exp((2.0 / n) * ll_null)
     if np.isclose(denom, 0.0):
